@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Aide CV24</title>
+	</head>
+	
+	<body>
+		<div style="text-align: center;">
+			<p>
+				<h1>Aide Projet CV24</h1>
+				<h2>Version 1.0</h2>
+			</p>
+		</div>
+		
+		<div>
+			<p>
+				<h2>Liste des CVs</h2>
+			
+				<b>URL</b>: <a href="./cv24/resume">/cv24/resume</a> au format HTML, <a href="./cv24/resume/xml">/cv24/resume/xml</a> au format XML<br>
+				<b>Méthode attendue</b>: GET sans paramètre.<br>
+				<b>Résumé de l'opération</b>: Renvoie la liste complète des CVs (ID, Identité, Objectif, Diplôme le plus élevé) au format HTML ou XML (conforme au schéma <a th:href="@{/cv24schema.xsd}">cv24</a>).
+			</p>
+			
+			<p>
+				<h2>Détails d'un CV</h2>
+			
+				<b>URL</b>: <a href="./cv24/html?id=?">/cv24/html?id=?</a> au format HTML, <a href="./cv24/xml?id=?">/cv24/xml?id=?</a> au format XML<br>
+				<b>Méthode attendue</b>: GET avec l'ID du CV demandé en paramètre.<br>
+				<b>Résumé de l'opération</b>: Renvoie tous les détails d'un CV au format HTML ou XML (conforme au schéma <a th:href="@{/cv24schema.xsd}">cv24</a>).
+			</p>
+			
+			<p>
+				<h2>Insertion d'un CV</h2>
+			
+				<b>URL</b>: <a href="./cv24/insert">/cv24/insert</a><br>
+				<b>Méthode attendue</b>: POST avec les détails du CV en flux XML conforme au schéma <a th:href="@{/cv24schema.xsd}">cv24</a>.<br>
+				<b>Résumé de l'opération</b>: Insert le CV en entrée dans la base de donnée si elle ne contient pas déjà un CV pour la même personne. Réponse au format XML, status INSERTED avec id du CV après insertion en cas de succès, ERROR sinon.
+			</p>
+			
+			<p>
+				<h2>Suppression d'un CV</h2>
+			
+				<b>URL</b>: <a href="./cv24/delete?id=?">/cv24/delete?id=?</a><br>
+				<b>Méthode attendue</b>: DELETE avec l'ID du CV à supprimer en paramètre.<br>
+				<b>Résumé de l'opération</b>: Supprime le CV dont l'ID est donnée s'il existe. Réponse au format XML, status DELETED en cas de succès, ERROR sinon.
+			</p>
+		
+		</div>
+	</body>
